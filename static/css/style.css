@@ -1,0 +1,22 @@
+
+body{
+    
+    direction: rtl;
+}
+.header{
+  height: 150px;
+  background-color: rgb(138, 207, 240);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  font-size: 1.2rem;
+    
+}
+.footer{
+    height: 200px;
+    background: rgb(31, 241, 49);
+    border: 1px solid;
+    text-align: center;
+}
