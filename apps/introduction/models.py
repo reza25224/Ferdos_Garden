@@ -2,7 +2,7 @@ from django.db import models
 
 #-----------------------------------------------------------------------------------------
 class Visitor_Group(models.Model):
-    code = models.PositiveIntegerField(max_length=10 ,help_text='کد یکتا برای گروه',verbose_name='کد ')
+    code = models.CharField(max_length=50 , unique=True  ,help_text='کد یکتا برای گروه',verbose_name='کد ')
     TITLE_CHOICES = [
         ('1' , 'عمومی'),
         ('2' , 'گروهی'),
@@ -12,7 +12,7 @@ class Visitor_Group(models.Model):
     title = models.CharField(max_length=10,choices=TITLE_CHOICES,default='1',verbose_name='عنوان')
 
     def __str__(self):
-        return self.code + ' ' + self.title
+        return  f'{self.code}\t {self.title}'
 
 #------------------------------------------------------------------------------------------
 class Place (models.Model):
@@ -29,13 +29,13 @@ class Place (models.Model):
         ('sat', 'شنبه'),
         ('sun', 'یک‌شنبه'),
     ]
-    open_days = models.CharField(max_length=100, blank=True,null=True,verbose_name='روز بازدید')
+    open_days = models.CharField(max_length=100, choices=OPEN_DAY_CHOISES ,blank=True,null=True,verbose_name='روز بازدید')
     regulations = models.TextField(blank=True , null=True ,help_text='فوانین و مقررات' ,verbose_name='قوانین')
     more_info = models.TextField(blank=True,null=True,help_text='اطلاعت بیشتر',verbose_name='اطلاعات بیشتر')
     created_at = models.DateTimeField(auto_now_add=True,verbose_name='تاریخ ثبت مکان')
     
     def __str__(self):
-        return self.code + '' + self.title
+        return f'{self.code}\t {self.title}\t {self.visiting_hours}\t'
     
 #------------------------------------------------------------------------------------------
 class Ticket_Price(models.Model):
@@ -44,10 +44,8 @@ class Ticket_Price(models.Model):
     place = models.ForeignKey(Place , on_delete=models.CASCADE,related_name='ticket_price')
     price = models.DecimalField(max_digits=10,decimal_places=2)
 
-    class Meta :
-        unique_together = ('visitor_group','place')
 
     def __str__(self):
-        return self.code
+        return f"{self.code}\t {self.visitor_group}\t {self.place}\t {self.price}"
     
 #-------------------------------------------------------------------------------------------
