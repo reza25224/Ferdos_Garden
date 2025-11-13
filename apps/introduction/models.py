@@ -18,16 +18,16 @@ class Visitor_Group(models.Model):
 class Place (models.Model):
     code = models.CharField(max_length=50 , unique=True , help_text='کد یکتا برای مکان',verbose_name='کد')
     title = models.CharField(max_length=50 , help_text='نام مکان',verbose_name='عنوان')
-    main_image = models.ImageField(upload_to='places/main_image', blank=True ,null=True)
+    main_image = models.ImageField(upload_to='places/main_image', blank=True ,null=True,verbose_name='تصویر ')
     visiting_hours = models.CharField(max_length=255 , blank=True , null=True , verbose_name='ساعت بازدید')
     OPEN_DAY_CHOISES = [
+        ('sat', 'شنبه'),
+        ('sun', 'یک‌شنبه'),
         ('mon', 'دوشنبه'),
         ('tue', 'سه‌شنبه'),
         ('wed', 'چهارشنبه'),
         ('thu', 'پنج‌شنبه'),
         ('fri', 'جمعه'),
-        ('sat', 'شنبه'),
-        ('sun', 'یک‌شنبه'),
     ]
     open_days = models.CharField(max_length=100, choices=OPEN_DAY_CHOISES ,blank=True,null=True,verbose_name='روز بازدید')
     regulations = models.TextField(blank=True , null=True ,help_text='فوانین و مقررات' ,verbose_name='قوانین')
