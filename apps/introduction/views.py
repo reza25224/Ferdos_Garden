@@ -25,6 +25,7 @@ class PlaceCreate(CreateView):
 #----------------------------------------PLace List
 class Placelist(ListView):
     model=Place
+    queryset=Place.objects.order_by('visiting_hours')
 
 #----------------------------------------Place Detail
 class PlaceDetail(DetailView):

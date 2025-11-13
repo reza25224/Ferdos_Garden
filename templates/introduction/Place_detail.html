@@ -8,6 +8,7 @@
         <p>{{object.regulations }}</p>
         <p>{{object.more_info }}</p>
         <p>{{object.created_at}}</p>
-
+        <a href="{% url 'Placelist' %}">برگشت به لیست</a>
+        <a href="{% url 'PlaceUpdate' place.pk %}" class="btn">ویرایش</a>
 
 {% endblock content %}

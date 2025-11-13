@@ -9,5 +9,7 @@
             </span>
              موافق هستید؟</h3>
         <input type="submit" value="بله">
+        <a href="{% url 'Placelist' %}">برگشت به لیست</a>
+        <a href="{% url 'PlaceUpdate' place.pk %}" class="btn">ویرایش</a>
     </form>
 {% endblock content %}
