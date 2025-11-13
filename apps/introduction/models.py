@@ -30,8 +30,8 @@ class Place (models.Model):
         ('fri', 'جمعه'),
     ]
     open_days = models.CharField(max_length=100, choices=OPEN_DAY_CHOISES ,blank=True,null=True,verbose_name='روز بازدید')
-    regulations = models.TextField(blank=True , null=True ,help_text='فوانین و مقررات' ,verbose_name='قوانین')
-    more_info = models.TextField(blank=True,null=True,help_text='اطلاعت بیشتر',verbose_name='اطلاعات بیشتر')
+    regulations = models.TextField(blank=True , null=True ,verbose_name='قوانین')
+    more_info = models.TextField(blank=True,null=True,verbose_name='اطلاعات بیشتر')
     created_at = models.DateTimeField(auto_now_add=True,verbose_name='تاریخ ثبت مکان')
     
     def __str__(self):

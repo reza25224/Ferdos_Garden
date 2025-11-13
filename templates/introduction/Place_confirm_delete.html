@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <h3>آیا با حذف مکان 
+            <span style="color: red;">
+                {{object.title}}
+            </span>
+             موافق هستید؟</h3>
+        <input type="submit" value="بله">
+    </form>
+{% endblock content %}

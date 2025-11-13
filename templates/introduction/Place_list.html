@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table border="1" width="1000"  style="margin:0 auto ;">
+        <tr>
+            <th>کد</th>
+            <th>عنوان</th>
+            <th>ساعت بازدید</th>
+            <th>روز بازدید</th>
+            <th>قوانین</th>
+            <th>اطلاعات بیشتر</th>
+            <th>زمان و تاریخ ایجاد</th>
+        </tr>
+        {% for place in object_list %}
+            <tr>
+                <td>{{place.code}}</td>
+                <td>{{place.title}}</td>
+                <td>{{place.visiting_hours}}</td>
+                <td>{{place.open_days}}</td>
+                <td>{{place.regulations}}</td>
+                <td>{{place.more_info}}</td>
+                <td>{{place.created_at}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}
