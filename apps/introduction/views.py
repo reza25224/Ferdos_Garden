@@ -26,6 +26,12 @@ class PlaceCreate(CreateView):
 class Placelist(ListView):
     model=Place
     queryset=Place.objects.order_by('visiting_hours')
+    paginate_by = 5
+
+    # #تابع جستجو
+    # def get_queryset(self):
+    #     title1 = self.request.GET.get('title')
+    #     return Place.objects.filter(title = title1)
 
 #----------------------------------------Place Detail
 class PlaceDetail(DetailView):
