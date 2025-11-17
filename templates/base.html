@@ -4,29 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>
+        {% block title %} {% endblock title %}
+    </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap-rtl.min.css' %}">
 </head>
 <body class="rtl">
-    <header>
-        
-            <div  class="header">
-
-              
-            </div>
-        </nav>
-    </header>
+    {% include  'partials/header.html' %}
     {% block content %}
     {% endblock content %}
-
-    {% block title %}
-    {% endblock title %}
-    <footer>
-        <div class="footer">
-
-        </div>
-    </footer>
+    {% include "partials/footer.html" %}
     
 </body>
 </html>

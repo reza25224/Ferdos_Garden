@@ -2,10 +2,11 @@
 body{
     
     direction: rtl;
+    
 }
 .header{
   height: 150px;
-  background-color: rgb(138, 207, 240);
+  background-color: rgb(183, 219, 231);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +17,7 @@ body{
 }
 .footer{
     height: 150px;
-    background: rgb(138,207,240);
+    background: rgb(135, 201, 181);
     border: 1px solid;
     text-align: center;
 }
@@ -59,3 +60,18 @@ body{
   border-color: #007bff;
 }
 
+
+.logo-circle {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+border: 6px solid #2c3e50; /* رنگ فریم /
+overflow: hidden; / اطمینان از اینکه تصویر خارج از دایره نمایش داده نشود */
+display: inline-block;
+box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+.logo-circle img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
