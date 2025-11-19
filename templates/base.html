@@ -12,6 +12,13 @@
 </head>
 <body class="rtl">
     {% include  'partials/header.html' %}
+    {% include 'partials/navbar.html' %}
+    <br>
+    <div class="container">
+        {% include 'partials/slider.html' %}
+    </div>
+    <br>
+    
     {% block content %}
     {% endblock content %}
     {% include "partials/footer.html" %}

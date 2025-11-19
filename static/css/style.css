@@ -11,7 +11,7 @@ body{
   align-items: center;
   justify-content: center;
   font-family: Arial, sans-serif;
-  color: white;
+  color: black;
   font-size: 1.2rem;
     
 }
@@ -74,4 +74,30 @@ box-shadow: 0 8px 16px rgba(0,0,0,0.25);
 width: 100%;
 height: 100%;
 object-fit: cover;
+}
+
+/* کلاس پایه جدول */
+.table-custom {
+  width: 100%;                 /* عرض تمام صفحه یا هر مقدار دلخواه */
+  max-width: 1000px;           /* اگر می‌خواهی محدوده مشخصی داشته باشه */
+  margin: 0 auto;              /* تراز وسط اگر عرض کمتر از 100% است */
+  border-collapse: collapse;   /* خطوط را یکپارچه می‌کند */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color: #333;
+}
+
+.table-custom th,
+.table-custom td {
+  border: 1px solid #ddd;      /* رنگ خطوط سلول‌ها */
+  padding: 8px 12px;             /* فاصله داخلی سلول‌ها */
+  vertical-align: middle;      /* تراز عمودی متن */
+  text-align: right;             /* برای RTL با توجه به direction */
+}
+
+.table-custom thead th {
+  background-color: #f8f9fa;   /* رنگ سطر عنوان‌ها (اختیاری) */
+  font-weight: 600;
+}
+.table-custom tbody tr:nth-child(even) {
+  background-color: #f9f9f9;     /* ردیف‌های متناوب برای readability (اختیاری) */
 }
